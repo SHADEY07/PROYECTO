@@ -1,4 +1,6 @@
-/* Configuración global */
+/* Ordenar y simplificar las propiedades con Flexbox */
+
+/* General */
 * {
     box-sizing: border-box;
 }
@@ -6,7 +8,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #fce4ec;
-    color: #333; /* Este color se hereda automáticamente */
+    color: #333;
     margin: 0;
     padding: 0;
 }
@@ -31,17 +33,25 @@ main {
     padding: 20px;
 }
 
+/* Productos */
 .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    display: flex; /* Cambiar a Flexbox */
+    flex-wrap: wrap; /* Permitir que los elementos envuelvan */
     gap: 20px;
+    justify-content: center; /* Centrar los productos en el contenedor */
 }
 
 .product {
+    flex: 1 1 calc(200px - 20px); /* Tamaño mínimo de 200px */
+    max-width: calc(200px - 20px); /* Limitar el ancho máximo */
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
+    display: flex; /* Flexbox para alinear internamente */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Separar el contenido */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -57,17 +67,18 @@ main {
     border: 5px solid #f8bbd0;
 }
 
-button {
-    background-color: #880e4f; /* Centralizamos el estilo general de botones */
+.product button {
+    background-color: #880e4f;
     color: #fff;
     border: none;
     padding: 10px 20px;
+    margin-top: 10px;
     cursor: pointer;
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-button:hover {
+.product button:hover {
     background-color: #d81b60;
     transform: scale(1.1);
     box-shadow: 0 4px 10px rgba(216, 27, 96, 0.4);
@@ -79,16 +90,18 @@ button:hover {
 }
 
 .order-form form {
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Cambiar a Flexbox */
+    flex-wrap: wrap; /* Permitir que los campos se distribuyan en filas */
+    gap: 20px; /* Espacio entre campos */
+    justify-content: space-between; /* Separar los campos horizontalmente */
 }
 
-label {
-    margin: 10px 0 5px;
+.order-form label, .order-form input {
+    flex: 1 1 45%; /* Cada campo ocupa el 45% del ancho */
 }
 
-input {
-    width: 100%;
+.order-form input {
+    width: 100%; /* Para asegurar consistencia */
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -96,10 +109,18 @@ input {
 }
 
 .order-form button {
-    margin-top: 20px;
+    flex: 1 1 100%; /* Botón ocupa toda la fila */
+    background-color: #880e4f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center; /* Centrar texto */
     transition: background-color 0.3s ease;
 }
 
 .order-form button:hover {
     background-color: #ad1457;
 }
+
