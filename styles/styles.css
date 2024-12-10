@@ -6,7 +6,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #fce4ec;
-    color: #333;
+    color: #333; /* Este color se hereda automáticamente */
     margin: 0;
     padding: 0;
 }
@@ -57,18 +57,17 @@ main {
     border: 5px solid #f8bbd0;
 }
 
-.product button {
-    background-color: #880e4f;
+button {
+    background-color: #880e4f; /* Centralizamos el estilo general de botones */
     color: #fff;
     border: none;
     padding: 10px 20px;
-    margin-top: 10px;
     cursor: pointer;
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.product button:hover {
+button:hover {
     background-color: #d81b60;
     transform: scale(1.1);
     box-shadow: 0 4px 10px rgba(216, 27, 96, 0.4);
@@ -84,11 +83,11 @@ main {
     flex-direction: column;
 }
 
-.order-form label {
+label {
     margin: 10px 0 5px;
 }
 
-.order-form input {
+input {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
@@ -97,13 +96,7 @@ main {
 }
 
 .order-form button {
-    background-color: #880e4f;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
     margin-top: 20px;
-    cursor: pointer;
-    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
