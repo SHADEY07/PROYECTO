@@ -1,18 +1,16 @@
-/* Reseteo de márgenes y paddings */
+/* Estilos generales */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilo global */
 body {
     font-family: Arial, sans-serif;
     background-color: #fce4ec;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -21,17 +19,18 @@ header {
     padding: 10px 20px;
 }
 
-/* Estilo para el título */
 h1 {
     color: #880e4f;
-    font-size: 24px;
+}
+
+.cart-icon img {
+    width: 40px;
 }
 
 /* Barra de navegación */
 .navbar {
-    display: flex; /* Flexbox para disposición horizontal */
-    justify-content: flex-start; /* Alineamos los elementos a la izquierda */
-    align-items: center;
+    display: flex;
+    justify-content: space-around;
     background-color: #880e4f;
     padding: 10px 0;
     margin-top: 10px;
@@ -40,28 +39,14 @@ h1 {
 .navbar a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    font-size: 18px;
+    padding: 10px;
     text-align: center;
-    margin-right: 20px; /* Espacio entre los elementos */
-    transition: background-color 0.3s ease;
 }
 
-/* Cambiar color del enlace cuando el mouse pase */
 .navbar a:hover {
-    background-color: #d81b60;
+    background-color: #ad1457;
     border-radius: 5px;
-}
-
-/* Icono del carrito */
-.cart-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cart-icon img {
-    width: 30px; /* Tamaño más pequeño para el carrito */
 }
 
 /* Sección de productos */
@@ -109,18 +94,13 @@ h1 {
     box-shadow: 0 4px 10px rgba(216, 27, 96, 0.4);
 }
 
-/* Estilo del formulario */
+/* Formulario */
 .order-form {
     margin-top: 40px;
     padding: 20px;
     background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-.order-form h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
 }
 
 .order-form form {
@@ -153,6 +133,75 @@ h1 {
 
 .order-form button:hover {
     background-color: #ad1457;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    /* Ajustes para pantallas pequeñas, como tabletas */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .products {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .cart-icon img {
+        width: 30px;
+    }
+
+    .order-form {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para pantallas muy pequeñas, como teléfonos */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .order-form {
+        padding: 10px;
+    }
+
+    .order-form button {
+        padding: 12px 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .cart-icon img {
+        width: 25px;
+    }
 }
 
 
